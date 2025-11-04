@@ -4,9 +4,9 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-    ../ClocksFinder.cpp \
-    ../VIP_Clock_finder.cpp \
-    ../support_funcs.cpp \
+    ./ClocksFinder.cpp \
+    ./VIP_Clock_finder.cpp \
+    ./support_funcs.cpp \
     containers/Array.cpp \
     containers/BitArray.cpp \
     containers/Hash.cpp \
@@ -110,8 +110,8 @@ SOURCES += \
 INCLUDE += commands
 INCLUDE += containers
 HEADERS += FileSystem.h LineFile.h Message.h DesignStack.h NameSpace.h Strings.h SaveRestore.h VerificSystem.h TextBasedDesignMod.h MemPool.h Protect.h VerificStream.h ControlFlow.h RuntimeFlags.h \
-    ../commonDefs.h \
-    ../support_funcs.h \
+    ./commonDefs.h \
+    ./support_funcs.h \
     containers/Array.h \
     containers/BitArray.h \
     containers/Hash.h \
