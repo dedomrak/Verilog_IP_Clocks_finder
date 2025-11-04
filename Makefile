@@ -236,7 +236,7 @@ Makefile: Verific_test_examples.pro C:/Qt/5.12.3/mingw73_64/mkspecs/win32-g++/qm
 		C:/Qt/5.12.3/mingw73_64/mkspecs/features/yacc.prf \
 		C:/Qt/5.12.3/mingw73_64/mkspecs/features/lex.prf \
 		Verific_test_examples.pro
-	$(QMAKE) -o Makefile Verific_test_examples.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
+	$(QMAKE) -o Makefile VIP_Clock_finder.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 C:/Qt/5.12.3/mingw73_64/mkspecs/features/spec_pre.prf:
 C:/Qt/5.12.3/mingw73_64/mkspecs/qdevice.pri:
 C:/Qt/5.12.3/mingw73_64/mkspecs/features/device_config.prf:
@@ -429,4 +429,5 @@ FORCE:
 
 $(MAKEFILE).Debug: Makefile
 $(MAKEFILE).Release: Makefile
+
 
