@@ -1,0 +1,112 @@
+﻿-- Analyzing Verilog file 'F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v' (VERI-1482)
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(185): INFO: Searching module dcfifo_example for clocked statements...
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(50): INFO: skipping this initial block
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(81): INFO: skipping this initial block
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(117): INFO: visiting this event control statement
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(152): INFO: visiting this event control statement
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(117): INFO:    signal wrclk is a clock of this statement
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(117): INFO:    signal aclr is an asynchronous set/reset condition of this statement
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(152): INFO:    signal rdclk is a clock of this statement
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(152): INFO:    signal aclr is an asynchronous set/reset condition of this statement
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(205): INFO: Searching module add_a_b_s0_s1 for clocked statements...
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(224): INFO: Searching module binary_to_gray for clocked statements...
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(222): INFO: visiting this event control statement
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(222): INFO:    signal clk is a clock of this statement
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(222): INFO:    signal aclr is an asynchronous set/reset condition of this statement
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(252): INFO: Searching module gray_to_binary for clocked statements...
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(250): INFO: visiting this event control statement
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(250): INFO:    signal clk is a clock of this statement
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(250): INFO:    signal aclr is an asynchronous set/reset condition of this statement
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(284): INFO: Searching module generic_mlab_dc for clocked statements...
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(277): INFO: visiting this event control statement
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(281): INFO: visiting this event control statement
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(277): INFO:    signal wclk is a clock of this statement
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(281): INFO:    signal rclk is a clock of this statement
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(316): INFO: Searching module synchronizer_ff_r2 for clocked statements...
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(301): INFO: visiting this event control statement
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(307): INFO: visiting this event control statement
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(313): INFO: visiting this event control statement
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(301): INFO:    signal din_clk is a clock of this statement
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(307): INFO:    signal dout_clk is a clock of this statement
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(313): INFO:    signal dout_clk is a clock of this statement
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(185): INFO: Found module 'dcfifo_example', will visit its items
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(92): INFO:       => Found instance add_a_b_s0_s1 #(LOG_DEPTH) wr_adder (.a(write_addr), .b((~wr_read_addr)), .s0(wrreq_safe), .s1(1'b1), .out(wrcapacity_w)) ;
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(129): INFO:       => Found instance add_a_b_s0_s1 rd_adder (.a(rd_write_addr), .b((~read_addr)), .s0(1'b0), .s1((~rdreq_safe)), .out(rdcapacity_w)) ;
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(163): INFO:       => Found instance binary_to_gray rd_b2g (.clk(rdclk), .aclr(aclr), .din(read_addr), .dout(gray_read_addr)) ;
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(164): INFO:       => Found instance synchronizer_ff_r2 rd2wr (.din_clk(rdclk), .din(gray_read_addr), .dout_clk(wrclk), .dout(wr_gray_read_addr)) ;
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(165): INFO:       => Found instance gray_to_binary rd_g2b (.clk(wrclk), .aclr(aclr), .din(wr_gray_read_addr), .dout(wr_read_addr)) ;
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(168): INFO:       => Found instance binary_to_gray wr_b2g (.clk(wrclk), .aclr(aclr), .din(write_addr), .dout(gray_write_addr)) ;
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(169): INFO:       => Found instance synchronizer_ff_r2 wr2rd (.din_clk(wrclk), .din(gray_write_addr), .dout_clk(rdclk), .dout(rd_gray_write_addr)) ;
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(170): INFO:       => Found instance gray_to_binary wr_g2b (.clk(rdclk), .aclr(aclr), .din(rd_gray_write_addr), .dout(rd_write_addr)) ;
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(183): INFO:       => Found instance generic_mlab_dc mlab_inst (.rclk(rdclk), .wclk(wrclk), .din(data), .waddr(write_addr), .we(1'b1), .re(1'b1), .raddr(read_addr), .dout(q)) ;
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(205): INFO: Found module 'add_a_b_s0_s1', will visit its items
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(224): INFO: Found module 'binary_to_gray', will visit its items
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(252): INFO: Found module 'gray_to_binary', will visit its items
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(284): INFO: Found module 'generic_mlab_dc', will visit its items
+F:\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\veri_test\Dual_clock_FIFO.v(316): INFO: Found module 'synchronizer_ff_r2', will visit its items
+
+ ##############################################################################
+ #      Design summary:
+ ##############################################################################
+ #      Top module:                             dcfifo_example
+ ##############################################################################
+
+ ##############################################################################
+ #      Master clocks:
+ #-----------------------------------------------------------------------------
+ #      Clock name:                              	rdclk
+ #      Clocktree paths:                        	dcfifo_example/rdclk
+ #-----------------------------------------------------------------------------
+ #      Clock name:                              	wrclk
+ #      Clocktree paths:                        	dcfifo_example/wrclk
+ #-----------------------------------------------------------------------------
+ #      Derived/Generated clocks:
+ #-----------------------------------------------------------------------------
+ #      Clock name:                              	clk
+ #      Clocktree paths:                        	dcfifo_example/rd_b2g/clk
+ #                                               				dcfifo_example/rd_b2g/clk
+ #                                               				dcfifo_example/rd_b2g/clk
+ #                                               				dcfifo_example/rd_b2g/clk
+ #-----------------------------------------------------------------------------
+ #      Clock name:                              clk
+ #      Clocktree paths:                         dcfifo_example/rd_g2b/clk
+ #                                               				dcfifo_example/rd_g2b/clk
+ #                                               				dcfifo_example/rd_g2b/clk
+ #                                               				dcfifo_example/rd_g2b/clk
+ #-----------------------------------------------------------------------------
+ #      Clock name:                              	din_clk
+ #      Clocktree paths:                         dcfifo_example/rd2wr/din_clk
+ #                                               				dcfifo_example/rd2wr/din_clk
+ #                                               				dcfifo_example/rd2wr/din_clk
+ #                                               				dcfifo_example/rd2wr/din_clk
+ #-----------------------------------------------------------------------------
+ #      Clock name:                              	dout_clk
+ #      Clocktree paths:                         dcfifo_example/rd2wr/dout_clk
+ #                                               				dcfifo_example/rd2wr/dout_clk
+ #                                               				dcfifo_example/rd2wr/dout_clk
+ #                                               				dcfifo_example/rd2wr/dout_clk
+ #-----------------------------------------------------------------------------
+ #      Clock name:                              	dout_clk
+ #      Clocktree paths:                         dcfifo_example/rd2wr/dout_clk
+ #                                               				dcfifo_example/rd2wr/dout_clk
+ #                                               				dcfifo_example/rd2wr/dout_clk
+ #                                               				dcfifo_example/rd2wr/dout_clk
+ #-----------------------------------------------------------------------------
+ #      Clock name:                              	rclk
+ #      Clocktree paths:                         dcfifo_example/mlab_inst/rclk
+ #-----------------------------------------------------------------------------
+ #      Clock name:                              	rdclk
+ #      Clocktree paths:                         dcfifo_example/rdclk
+ #-----------------------------------------------------------------------------
+ #      Clock name:                              	wclk
+ #      Clocktree paths:                         dcfifo_example/mlab_inst/wclk
+ #-----------------------------------------------------------------------------
+ #      Clock name:                              	wrclk
+ #      Clocktree paths:                         dcfifo_example/wrclk
+ #-----------------------------------------------------------------------------
+ ##############################################################################
+
+ ##############################################################################
+ #      End of Design summary!
+ ##############################################################################
+Press <RETURN> to close this window...

@@ -1,0 +1,112 @@
+﻿-- Analyzing Verilog file 'F:\XXXXXXXXXXXXXXXXXXXXXXXXX\parse_netlist_TEST\veri_test\clock_hier.v' (VERI-1482)
+F:\XXXXXXXXXXXXXXXXXXXXX\parse_netlist_TEST\veri_test\clock_hier.v(23): INFO: analyzing included file 'D_flipflop.v' (VERI-1328)
+D_flipflop.v(23): INFO: back to file 'D_flipflop.v' (VERI-2320)
+D_flipflop.v(24): INFO: analyzing included file 'clock_gen.v' (VERI-1328)
+clock_gen.v(24): INFO: back to file 'clock_gen.v' (VERI-2320)
+clock_gen.v(21): INFO: Searching module d_ff for clocked statements...
+clock_gen.v(19): INFO: visiting this event control statement
+clock_gen.v(19): INFO:    signal clk is a clock of this statement
+clock_gen.v(19): INFO:    signal rst_n is an asynchronous set/reset condition of this statement
+clock_gen.v(64): INFO: Searching module clock_gen for clocked statements...
+clock_gen.v(30): INFO: skipping this initial block
+clock_gen.v(36): INFO: skipping this initial block
+clock_gen.v(48): INFO: visiting this event control statement
+clock_gen.v(63): INFO: visiting this event control statement
+clock_gen.v(48): INFO:    signal enable is an asynchronous set/reset condition of this statement
+clock_gen.v(48): INFO:    signal enable is an asynchronous set/reset condition of this statement
+clock_gen.v(48): ERROR: cannot find a clock on this statement
+clock_gen.v(63): INFO:    signal start_clk is a clock of this statement
+clock_gen.v(206): INFO: Searching module top for clocked statements...
+clock_gen.v(166): INFO: visiting this event control statement
+clock_gen.v(182): INFO: visiting this event control statement
+clock_gen.v(192): INFO: visiting this event control statement
+clock_gen.v(198): INFO: visiting this event control statement
+clock_gen.v(204): INFO: visiting this event control statement
+clock_gen.v(182): INFO:    signal clk is a clock of this statement
+clock_gen.v(182): INFO:    signal rst is an asynchronous set/reset condition of this statement
+clock_gen.v(192): INFO:    signal clk is a clock of this statement
+clock_gen.v(192): INFO:    signal rst is an asynchronous set/reset condition of this statement
+clock_gen.v(198): INFO:    signal div_clk_1Hz is a clock of this statement
+clock_gen.v(198): INFO:    signal rst is an asynchronous set/reset condition of this statement
+clock_gen.v(204): INFO:    signal gen_clk_mod_out is a clock of this statement
+clock_gen.v(204): INFO:    signal rst is an asynchronous set/reset condition of this statement
+clock_gen.v(238): INFO: Searching module block1 for clocked statements...
+clock_gen.v(230): INFO: visiting this event control statement
+clock_gen.v(236): INFO: visiting this event control statement
+clock_gen.v(230): INFO:    signal gen_clk_out is a clock of this statement
+clock_gen.v(230): INFO:    signal rst is an asynchronous set/reset condition of this statement
+clock_gen.v(236): INFO:    signal blk2_genClk_out is a clock of this statement
+clock_gen.v(236): INFO:    signal rst is an asynchronous set/reset condition of this statement
+clock_gen.v(258): INFO: Searching module block2 for clocked statements...
+clock_gen.v(256): INFO: visiting this event control statement
+clock_gen.v(256): INFO:    signal genClk_out1 is a clock of this statement
+clock_gen.v(284): INFO: Searching module clk_divider for clocked statements...
+clock_gen.v(282): INFO: visiting this event control statement
+clock_gen.v(282): INFO:    signal clk_50mhz is a clock of this statement
+clock_gen.v(282): INFO:    signal rst is an asynchronous set/reset condition of this statement
+clock_gen.v(21): INFO: Found module 'd_ff', will visit its items
+clock_gen.v(64): INFO: Found module 'clock_gen', will visit its items
+clock_gen.v(206): INFO: Found module 'top', will visit its items
+clock_gen.v(169): INFO:       => Found instance clk_divider divClk_inst (.clk_50mhz(clk), .rst(rst), .clk_1hz(div_clk_1Hz)) ;
+clock_gen.v(170): INFO:       => Found instance d_ff dff_top_inst1 (.q(dff_inst1_out), .d(in[1]), .rst_n(rst), .clk(div_clk_1Hz)) ;
+clock_gen.v(171): INFO:       => Found instance clock_gen clk_gen_bl1 (.enable(1'b1), .clk(gen_clk_mod_out)) ;
+clock_gen.v(172): INFO:       => Found instance block1 block_inst1 (.clk(clk), .rst(rst), .data({in[7],in[8]}), .blk1_out_reg({out1[7],out1[8]})) ;
+clock_gen.v(238): INFO: Found module 'block1', will visit its items
+clock_gen.v(221): INFO:       => Found instance clock_gen clk_gen_block_inst1 (.enable(1'b1), .clk(gen_clk_out)) ;
+clock_gen.v(222): INFO:       => Found instance d_ff dff_blk1_inst1 (.q(dff_out1), .d(data[0]), .rst_n(rst), .clk(clk)) ;
+clock_gen.v(223): INFO:       => Found instance d_ff dff_blk1_inst2 (.q(dff_out2), .d(data[1]), .rst_n(rst), .clk(gen_clk_out)) ;
+clock_gen.v(224): INFO:       => Found instance block2 genClk_block_inst1 (.enable(1'b1), .blk2_genClk_out(blk2_genClk_out)) ;
+clock_gen.v(258): INFO: Found module 'block2', will visit its items
+clock_gen.v(251): INFO:       => Found instance clock_gen clk_gen_block_inst1 (.enable(enable), .clk(genClk_out1)) ;
+clock_gen.v(284): INFO: Found module 'clk_divider', will visit its items
+
+ ##############################################################################
+ #      Design summary:
+ ##############################################################################
+ #      Top module:                             top
+ ##############################################################################
+
+ ##############################################################################
+ #      Master clocks:
+ #-----------------------------------------------------------------------------
+ #      Clock name:                              clk
+ #      Clocktree paths:                         top/clk
+ #-----------------------------------------------------------------------------
+ #      Clock name:                              clk
+ #      Clocktree paths:                         top/clk
+ #-----------------------------------------------------------------------------
+ #      Clock name:                              div_clk_1Hz
+ #      Clocktree paths:                         top/clk
+ #-----------------------------------------------------------------------------
+ #      Clock name:                              gen_clk_mod_out
+ #      Clocktree paths:                         top/clk
+ #-----------------------------------------------------------------------------
+ #      Derived/Generated clocks:
+ #-----------------------------------------------------------------------------
+ #      Clock name:                              blk2_genClk_out
+ #      Clocktree paths:                         top/block_inst1/
+ #-----------------------------------------------------------------------------
+ #      Clock name:                              clk
+ #      Clocktree paths:                         top/dff_top_inst1/clk
+ #-----------------------------------------------------------------------------
+ #      Clock name:                              clk_50mhz
+ #      Clocktree paths:                         top/divClk_inst/clk_50mhz
+ #-----------------------------------------------------------------------------
+ #      Clock name:                              div_clk_1Hz
+ #      Clocktree paths:                         top/clk
+ #-----------------------------------------------------------------------------
+ #      Clock name:                              gen_clk_mod_out
+ #      Clocktree paths:                         top/clk
+ #-----------------------------------------------------------------------------
+ #      Clock name:                              gen_clk_out
+ #      Clocktree paths:                         top/block_inst1/
+ #-----------------------------------------------------------------------------
+ #      Clock name:                              start_clk
+ #      Clocktree paths:                         top/clk_gen_bl1/
+ #-----------------------------------------------------------------------------
+ ##############################################################################
+
+ ##############################################################################
+ #      End of Design summary!
+ ##############################################################################
+Press <RETURN> to close this window...
