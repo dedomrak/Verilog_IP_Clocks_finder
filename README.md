@@ -107,7 +107,7 @@ clock_gen.v(284): INFO: Found module 'clk_divider', will visit its items
 ```
 
 
-## Screenshots
+
 ## Screenshots
 Printscreen png files are located in ./doc folder                                                                                 
 Report clock hierarchy:
